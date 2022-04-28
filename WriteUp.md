@@ -16,7 +16,7 @@ The final dataset includes nine predictive variables. The predicted outcome is t
 
 Using the Keras Sequential API, I created a neural network. The structure of the network is shown in figure one. I created training and testing datasets (20%) and trained the model on the training dataset over 100 epochs with batch sizes of 20. The loss function was mean squared error (MSE), the optimizer adam, and an accuracy metric was generated with each epoch. The loss fuction and adam were chosen based on manual comparison of different loss fuctions and optimzers avaliable within the Keras API. These two showed the best reduction in loss, quickest training time, and highest accuracy. 
 
-![[Pasted image 20220428143247.png]]
+[[https://github.com/curiotiks/persist/blob/b7e8816470aa5bd50394a9f653830ffeb02d19d1/img/model.png]]
 
 Once trained, I used the model to predict time spent within a level on the testing dataset. The initial training led to small MSE (1.01) but an perfect zero in accuracy. After exploring more of the *evaluate* function, I realized that the outcomes were continuous. Without rounding the values to a single digit, every prediction was wrong because of randomness in the decimals.
 
@@ -25,23 +25,12 @@ So to expand on what I could see—beyond a single accuracy measure—I generate
 ## Results
 After rounding the duration values to a single digit, the final MSE was 1.15 and the accuracy .46. The confusion matrix is shown in figure two. The x and y-axises are the possible log durations. It's clear that the bulk of accuracy is coming from durations between three and five. The most accurate predictions are within three and four—also the most incorrect—which may be a result of uneven distribution in the sample. The mean log duration was 4.09 (*sd* = 1.4). Although the accuracy is greatly improved from zero, the confusion matrix shows that there are still inaccuaries present that may be inflating the overall accuracy. Those low-middle values are most common, so they are also most represented in the datset. 
 
-![[conf_mat.png]]
+[[https://github.com/curiotiks/persist/blob/b7e8816470aa5bd50394a9f653830ffeb02d19d1/img/conf_mat.png]]
 
 ## Conclusion
 Although the results are not parade-worthy, there is promise to these intial findings. Currently, I am performing classification on ten separate categories to make predictions on a continuous scale. Bagging items into artifical categories throws away valuable data. Using the above approach, in my thinking, allows me to keep much of that variability. And, interesting observation, using the confusion matrix, is the distribution of inaccuracies surrounding a value. Note that, moving up and down at x = 3, there is more varaility in the reported predictions (ranging between 0 and 6). But when x = 4, the  variability decreases to just between four and six. 
 
 If I did create grouping variables based an arbitrary divison of the duration variable, the model accuracy would be greatly improved. I would recommend at least starting with making five groups. The goal being to collapse the variability around a prediction by making more potential predictions "correct". We trade precision for accuracy. Whether or not that exchange is worthwhile is dependent on the model's purpose. Running real-time in a game distributed to schools throughout the country would warrant the cost. 
-
-## References
-Beck, J. E., & Gong, Y. (2013). Wheel-spinning: Students who fail to master a skill. In H. C. Lane, K. Yacef, J. Mostow, & P. Pavlik (Eds.), _Artificial Intelligence in Education_ (pp. 431–440). Springer. https://doi.org/10.1007/978-3-642-39112-5_44
-
-DiCerbo, K. E. (2014). Game-based assessment of persistence. _Journal of Educational Technology & Society_, _17_(1), 17–28. https://www.jstor.org/stable/jeductechsoci.17.1.17
-
-Eisenberger, R., & Leonard, J. M. (1980). Effects of conceptual task difficulty on generalized persistence. _The American Journal of Psychology_, _93_(2), 285. https://doi.org/10.2307/1422233
-
-Fang, Y., Nye, B., Pavlik, P., Xu, Y. J., Graesser, A., & Hu, X. (2017). _Online learning persistence and academic achievement_. International Educational Data Mining Society. https://eric.ed.gov/?id=ED596608
-
-Feather, N. T. (1962). The study of persistence. _Psychological Bulletin_, _59_(2), 94–115. https://doi.org/10.1037/h0042645
 
 ### Appendix
 https://github.com/curiotiks/webspace/blob/main/PP_Analysis/PersistenceNN.ipynb

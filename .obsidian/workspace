@@ -1,0 +1,97 @@
+{
+  "main": {
+    "id": "cdee6e7853933cae",
+    "type": "split",
+    "children": [
+      {
+        "id": "67c31cefd76749ec",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "WriteUp.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2fdd0200d5006596",
+    "type": "split",
+    "children": [
+      {
+        "id": "b4d028995f227845",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3d99e284bde807cf",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "c512dd90e8ecce85",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "752aa0037443e1ee",
+    "type": "split",
+    "children": [
+      {
+        "id": "a980f5a210ba1675",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "454ad898f0e25de0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "WriteUp.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "67c31cefd76749ec",
+  "lastOpenFiles": [
+    "WriteUp.md",
+    "References.md",
+    "confusion_matrix.png",
+    "img/conf_mat.png",
+    "img/model.png"
+  ]
+}
