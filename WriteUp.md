@@ -25,7 +25,7 @@ So to expand on what I could see—beyond a single accuracy measure—I generate
 ## Results
 After rounding the duration values to a single digit, the final MSE was 1.15 and the accuracy .46. The confusion matrix is shown in figure two. The x and y-axises are the possible log durations. It's clear that the bulk of accuracy is coming from durations between three and five. The most accurate predictions are within three and four—also the most incorrect—which may be a result of uneven distribution in the sample. The mean log duration was 4.09 (*sd* = 1.4). Although the accuracy is greatly improved from zero, the confusion matrix shows that there are still inaccuaries present that may be inflating the overall accuracy. Those low-middle values are most common, so they are also most represented in the datset. 
 
-[[https://github.com/curiotiks/persist/blob/b7e8816470aa5bd50394a9f653830ffeb02d19d1/img/conf_mat.png]]
+[[https://github.com/curiotiks/persist/blob/master/img/conf_mat.png]]
 
 ## Conclusion
 Although the results are not parade-worthy, there is promise to these intial findings. Currently, I am performing classification on ten separate categories to make predictions on a continuous scale. Bagging items into artifical categories throws away valuable data. Using the above approach, in my thinking, allows me to keep much of that variability. And, interesting observation, using the confusion matrix, is the distribution of inaccuracies surrounding a value. Note that, moving up and down at x = 3, there is more varaility in the reported predictions (ranging between 0 and 6). But when x = 4, the  variability decreases to just between four and six. 
