@@ -1,0 +1,1 @@
+Feather, N.T., (1962). The Student of Persistence. *Psychological Bulletin, 59*(2), 94-115. https://doi.org/10.1037/h0042645
