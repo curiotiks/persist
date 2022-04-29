@@ -18,6 +18,25 @@ Using the Keras Sequential API, I created a neural network. The structure of the
 
 ![Model Figure](https://github.com/curiotiks/persist/blob/master/img/model.png?raw=true)
 
+Model: "sequential_12"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+input (Dense)                (None, 12)                120
+_________________________________________________________________
+hidden_6 (Dense)             (None, 6)                 78
+_________________________________________________________________
+hidden_3 (Dense)             (None, 3)                 21
+_________________________________________________________________
+exit (Dense)                 (None, 1)                 4
+=================================================================
+Total params: 223
+Trainable params: 223
+Non-trainable params: 0
+_________________________________________________________________
+None
+
+
 Once trained, I used the model to predict time spent within a level on the testing dataset. The initial training led to small MSE (1.01) but an perfect zero in accuracy. After exploring more of the *evaluate* function, I realized that the outcomes were continuous. Without rounding the values to a single digit, every prediction was wrong because of randomness in the decimals.
 
 So to expand on what I could see—beyond a single accuracy measure—I generated a confusion matrix. The log duration values ranged from zero to nine, so the resulting confusion matrix is 10 x 10. There is a clear grouping in the center, around three and four seconds, where the accuracy is quite good. 
