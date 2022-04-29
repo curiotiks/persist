@@ -14,10 +14,9 @@ It is a common misconception that, when relying on machine learning methods, any
 ## Method
 The final dataset includes nine predictive variables. The predicted outcome is the log-transformed duration spent on a level. All missing values were a result of technical fault. Most were a result of students closing the game without logging out. All missing values were dropped rowwise to keep the length of arrays equal. The log-transformation resulted in one "divide by zero" error. The error in question was recoded as zero after the log-transformation.
 
-Using the Keras Sequential API, I created a neural network. The structure of the network is shown in figure one. I created training and testing datasets (20%) and trained the model on the training dataset over 100 epochs with batch sizes of 20. The loss function was mean squared error (MSE), the optimizer adam, and an accuracy metric was generated with each epoch. The loss fuction and adam were chosen based on manual comparison of different loss fuctions and optimzers avaliable within the Keras API. These two showed the best reduction in loss, quickest training time, and highest accuracy. 
+Using the Keras Sequential API, I created a neural network. The structure of the network is shown in figure one. I created training and testing datasets (20%) and trained the model on the training dataset over 100 epochs with batch sizes of 20. The loss function was mean squared error (MSE), the optimizer adam, and an accuracy metric was generated with each epoch. The loss fuction and adam were chosen based on manual comparison of different loss fuctions and optimzers avaliable within the Keras API. These two showed the best reduction in loss, quickest training time, and highest accuracy.
 
-![Model Figure](https://github.com/curiotiks/persist/blob/master/img/model.png?raw=true)
-
+````
 Model: "sequential_12"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
@@ -35,7 +34,6 @@ Trainable params: 223
 Non-trainable params: 0
 _________________________________________________________________
 None
-
 
 Once trained, I used the model to predict time spent within a level on the testing dataset. The initial training led to small MSE (1.01) but an perfect zero in accuracy. After exploring more of the *evaluate* function, I realized that the outcomes were continuous. Without rounding the values to a single digit, every prediction was wrong because of randomness in the decimals.
 
